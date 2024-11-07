@@ -4,7 +4,7 @@ const bcrypt =require('bcrypt');
 
 const app=express();
 
-app.set(`view wngine`,`esj`);
+
 
 const port=4000;
 app.listen(port,()=>{
