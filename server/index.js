@@ -25,13 +25,21 @@ app.listen(process.env.PORT, () => {
 app.post("/signup", async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        console.log(name + " " + email + " " + password);
+
+        // Validate input
+        if (!name || !email || !password) {
+            return res.status(400).json({ error: "All fields are required" });
+        }
+
+        console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
 
         // Check if the user already exists
-        const existingUser = await UserModel.findOne({ email });  // Corrected to UserModel
+        const existingUser = await UserModel.findOne({ email });
         console.log(existingUser);
+
         if (existingUser) {
-            return res.status(400).json({ error: "Email already exists" });
+            // Return conflict status code (409)
+            return res.status(409).json({ error: "Email already exists" });
         }
 
         // Hash the password
@@ -43,10 +51,16 @@ app.post("/signup", async (req, res) => {
         // Save the new user to the database
         const savedUser = await newUser.save();
 
-        // Send the response
-        res.status(201).json(savedUser);
+        // Send the response with the saved user (without password)
+        res.status(201).json({
+            name: savedUser.name,
+            email: savedUser.email,
+            id: savedUser._id
+        });
 
-    } catch (error) {  // Fixed catch syntax
+    } catch (error) {
+        // Handle unexpected errors
+        console.error(error);
         res.status(500).json({ error: error.message });
     }
 });
