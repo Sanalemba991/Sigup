@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { data } from "../restApi.json";
 import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link as RouterLink } from 'react-router-dom';  // React Router Link for navigation
+
 const Navbar = () => {
   const [show, setShow] = useState(false);
   return (
@@ -22,10 +24,17 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+                 {/* Logout Button */}
+                 <RouterLink to="/" className="logoutBtn">
+            <button className="logoutBtn">Logout</button>
+          </RouterLink>
+          
           <button className="menuBtn">OUR MENU</button>
+
+  
         </div>
-        <div className="hamburger" onClick={()=> setShow(!show)}>
-                <GiHamburgerMenu/>
+        <div className="hamburger" onClick={() => setShow(!show)}>
+          <GiHamburgerMenu />
         </div>
       </nav>
     </>
