@@ -11,24 +11,26 @@ function LogIn() {
   const submit = (e) => {
     e.preventDefault();
 
-    // Make sure the correct endpoint for login is provided
+    // Send login request to the server
     axios
-      .post('http://localhost:4000/login', { email, password }) // Adjust the endpoint as needed
+      .post('http://localhost:4000/login', { email, password })
       .then(result => {
         if (result.data === "Success") {
-            navigate("/home"); // Redirect to login page after successful sign-up
+          navigate("/home"); // Redirect to home on successful login
+        } else {
+          alert("Login Failed: Incorrect credentials or user does not exist.");
         }
-        else{
-          alert("Login Failed: User Does not exists")
-        }
-    })
-    .catch(err => console.log(err));
-};
-
+      })
+      .catch(err => {
+        console.error(err);
+        alert("An error occurred. Please try again.");
+      });
+  };
 
   return (
     <div>
       <h2>Login</h2>
+
       <form onSubmit={submit}>
         <div>
           <label htmlFor="email">
@@ -58,7 +60,7 @@ function LogIn() {
         <button type="submit">Login</button>
       </form>
 
-      <Link to="/signup">Don't have an account? Sign up</Link>
+      <Link to="/register">Don't have an account? Sign up</Link>
     </div>
   );
 }
