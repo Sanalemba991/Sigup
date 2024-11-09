@@ -26,10 +26,9 @@ const Navbar = () => {
           </div>
                  {/* Logout Button */}
                  <RouterLink to="/" className="logoutBtn">
-            <button className="logoutBtn">Logout</button>
+                 <button className="menuBtn">Log Out</button>
           </RouterLink>
-          
-          <button className="menuBtn">OUR MENU</button>
+         
 
   
         </div>
