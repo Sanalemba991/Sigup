@@ -24,7 +24,7 @@ const Success = () => {
         <div className="container">
           <img src="/sandwich.png" alt="success" />
           <h1>Redirecting to Home in {countdown} seconds...</h1>
-          <Link to={"/"}>
+          <Link to={"/home"}>
             Back to Home <HiOutlineArrowNarrowRight />
           </Link>
         </div>

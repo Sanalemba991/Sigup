@@ -45,6 +45,7 @@ function SignUp() {
                         placeholder="Name"
                         name="name"
                         value={name}
+                        className="la"
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
@@ -57,6 +58,7 @@ function SignUp() {
                         placeholder="Email"
                         name="email"
                         value={email}
+                        className="la"
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
@@ -69,6 +71,7 @@ function SignUp() {
                         placeholder="Password"
                         name="password"
                         value={password}
+                        className="la"
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
