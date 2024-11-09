@@ -15,19 +15,14 @@ function LogIn() {
     axios
       .post('http://localhost:4000/login', { email, password }) // Adjust the endpoint as needed
       .then(result => {
-        if (result.status === 201) {
-            console.log("User Login successfully");
+        if (result.data === "Success") {
             navigate("/home"); // Redirect to login page after successful sign-up
         }
-    })
-    .catch(err => {
-        if (err.response && err.response.status === 409) {
-            // Email already exists, show an alert message
-            window.alert("The email is already registered. Please use a different email.");
-        } else {
-            console.log(err); // Log other errors
+        else{
+          alert("Login Failed: User Does not exists")
         }
-    });
+    })
+    .catch(err => console.log(err));
 };
 
 
