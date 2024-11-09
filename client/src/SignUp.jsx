@@ -19,7 +19,7 @@ function SignUp() {
             .then(result => {
                 if (result.status === 201) {
                     console.log("User created successfully");
-                    navigate("/login"); // Redirect to login page after successful sign-up
+                    navigate("/"); // Redirect to login page after successful sign-up
                 }
             })
             .catch(err => {

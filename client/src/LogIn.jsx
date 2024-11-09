@@ -16,13 +16,16 @@ function LogIn() {
       .post('http://localhost:4000/login', { email, password })
       .then(result => {
         if (result.data === "Success") {
-          navigate("/home"); // Redirect to home on successful login
+          // Redirect to home on successful login
+          navigate("/home");
         } else {
+          // Show failure message if credentials are incorrect
           alert("Login Failed: Incorrect credentials or user does not exist.");
         }
       })
       .catch(err => {
         console.error(err);
+        // Show generic error message if there's an issue with the request
         alert("An error occurred. Please try again.");
       });
   };
