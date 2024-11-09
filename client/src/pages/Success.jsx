@@ -10,7 +10,7 @@ const Success = () => {
       setCountdown((preCount) => {
         if (preCount === 1) {
           clearInterval(timeoutId);
-          navigate("/");
+          navigate("/home");
         }
         return preCount - 1;
       });
