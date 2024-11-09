@@ -13,8 +13,8 @@ function LogIn() {
 
     // Send login request to the server
     axios
-      .post('http://localhost:4000/login', { email, password })
-      .then(result => {
+      .post("http://localhost:4000/login", { email, password })
+      .then((result) => {
         if (result.data === "Success") {
           // Redirect to home on successful login
           navigate("/home");
@@ -23,7 +23,7 @@ function LogIn() {
           alert("Login Failed: Incorrect credentials or user does not exist.");
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         // Show generic error message if there's an issue with the request
         alert("An error occurred. Please try again.");
@@ -31,39 +31,42 @@ function LogIn() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="Log">
+      <h2 className="login">Login</h2>
+      <div className="cen">
+        <form onSubmit={submit}>
+          <div >
+            <label htmlFor="email">
+              <strong>Email</strong>
+            </label>
+            <input
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="cen">
+            <label htmlFor="password">
+              <strong>Password</strong>
+            </label>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-      <form onSubmit={submit}>
-        <div>
-          <label htmlFor="email">
-            <strong>Email</strong>
-          </label>
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">
-            <strong>Password</strong>
-          </label>
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+          <button className="btn" type="submit">
+            Login
+          </button>
+        </form>
 
-        <button type="submit">Login</button>
-      </form>
-
-      <Link to="/register">Don't have an account? Sign up</Link>
+        <Link to="/register">Don't have an account? Sign up</Link>
+      </div>
     </div>
   );
 }
