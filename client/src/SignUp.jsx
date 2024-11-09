@@ -34,9 +34,9 @@ function SignUp() {
 
     return (
         <div>
-            <h2>Register</h2>
+            <h2 className="login">Register</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="cen">
                     <label htmlFor="name">
                         <strong>Name</strong>
                     </label>
@@ -48,7 +48,7 @@ function SignUp() {
                         onChange={(e) => setName(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="cen">
                     <label htmlFor="email">
                         <strong>Email</strong>
                     </label>
@@ -60,7 +60,7 @@ function SignUp() {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="cen">
                     <label htmlFor="password">
                         <strong>Password</strong>
                     </label>
@@ -73,7 +73,7 @@ function SignUp() {
                     />
                 </div>
 
-                <button type="submit">Register</button>
+                <button className="ctn" type="submit">Register</button>
             </form>
    
         </div>

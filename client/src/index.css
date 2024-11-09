@@ -1172,5 +1172,25 @@ a:focus {
   outline: none;
   box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.6);  /* Soft glowing outline for accessibility */
 }
+.la{
+  margin-left: 12px;
+}
+.ctn{
+  width: 4em;
+  border-color: black;
+  background-color: transparent;
+border-radius:10%;
+  margin-top: 14px;
+  margin-left: 50%;
+  cursor: pointer;
+ /* Uppercase text for button */
+  transition: all 0.3s ease;  /* Smooth transitions for background and scale */
+  box-shadow:black;
+}
 
+.ctn:hover {
+  background: gray;  /* Reverse gradient on hover */
+  transform: translateY(-2px);  /* Slight upward movement for a hover effect */
+  box-shadow: 0 6px 12px rgba(174, 237, 243, 0.4);  /* Enhance shadow on hover */
+}
 /**********************************************************************************************************************/

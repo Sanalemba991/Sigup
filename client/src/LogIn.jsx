@@ -37,13 +37,14 @@ function LogIn() {
         <form onSubmit={submit}>
           <div >
             <label htmlFor="email">
-              <strong>Email</strong>
+              <strong >Email</strong>
             </label>
             <input
               type="email"
               placeholder="Email"
               name="email"
               value={email}
+              className="la"
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -56,6 +57,7 @@ function LogIn() {
               placeholder="Password"
               name="password"
               value={password}
+              className="la"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
