@@ -64,3 +64,33 @@ app.post("/signup", async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+app.post("/login", async (req, res) => {
+    try{
+        const {email,password} =req.body;
+        const user=await UserModel.findOne({email});
+      
+        if(user){
+        
+          const passwordMatch=await bcrypt.compare(password,user.password);
+      
+          if(passwordMatch){
+              res.json("Success")
+          }
+          else{
+              res.status(401).json("Password does not match")
+          }
+      
+      
+        }else{
+          res.status(401).json("No Record Found");
+      
+        }
+    }
+    catch(error){
+        res.status(500).json({error: error.message})
+    }
+ 
+
+
+
+})
