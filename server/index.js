@@ -1,11 +1,10 @@
-// server.js (or app.js)
-
 const express = require("express");
+const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const UserModel = require("./model/User");
-const ReservationModel = require("./model/Reservation");  // Import Reservation model
+const ReservationModel = require("./model/Reservation");  // Import Reservation model // Corrected to match the imported model name
 
 dotenv.config();
 
@@ -34,8 +33,12 @@ app.post("/signup", async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
+    console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
+
     // Check if the user already exists
     const existingUser = await UserModel.findOne({ email });
+    console.log(existingUser);
+
     if (existingUser) {
       // Return conflict status code (409)
       return res.status(409).json({ error: "Email already exists" });
@@ -50,18 +53,18 @@ app.post("/signup", async (req, res) => {
     // Save the new user to the database
     const savedUser = await newUser.save();
 
+    // Send the response with the saved user (without password)
     res.status(201).json({
       name: savedUser.name,
       email: savedUser.email,
       id: savedUser._id,
     });
   } catch (error) {
+    // Handle unexpected errors
     console.error(error);
     res.status(500).json({ error: error.message });
   }
 });
-
-// Login route
 app.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -82,36 +85,37 @@ app.post("/login", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-// Reservation route
-app.post("/api/v1/reservation/send", async (req, res) => {
+// Add a reservation route
+app.post("/reservation", async (req, res) => {
   try {
     const { firstName, lastName, email, phone, date, time } = req.body;
 
     // Validate input
     if (!firstName || !lastName || !email || !phone || !date || !time) {
-      return res.status(400).json({ message: "All fields are required" });
+      return res.status(400).json({ error: "All fields are required" });
     }
-    // Create a new reservation
-    const newReservation = new ReservationModel({
-      firstName,
-      lastName,
-      email,
-      phone,
-      date,
-      time,
-    });
 
-    // Save the reservation to the database
+    // Create a new reservation
+    const newReservation = new ReservationModel({ firstName, lastName, email, phone, date, time });
+
+    // Save the new reservation to the database
     const savedReservation = await newReservation.save();
 
-    // Send response back to the frontend
+    // Send the response with the saved reservation
     res.status(201).json({
-      message: "Reservation successfully made",
-      reservation: savedReservation,
+      firstName: savedReservation.firstName,
+      lastName: savedReservation.lastName,
+      email: savedReservation.email,
+      phone: savedReservation.phone,
+      date: savedReservation.date,
+      time: savedReservation.time,
+      id: savedReservation._id,
     });
   } catch (error) {
+    // Handle unexpected errors
     console.error(error);
-    res.status(500).json({ message: "Something went wrong", error: error.message });
+    res.status(500).json({ error: error.message });
   }
 });
+
+
