@@ -7,9 +7,11 @@
    
   }
 
-  .login{
+  .logi{
+    margin-top: 90px;
     color: black;
     text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 /* Styling for the form container */
 .cen {
@@ -21,6 +23,7 @@
  
   }
   .cen label strong {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     /* Aqua color for the strong part */
   }
   .cen label{
@@ -29,8 +32,9 @@
  /* Styling for input fields inside .cen */
  .cen input {
     margin-top: 9px;
+    
     background-color: transparent; /* Make background transparent */
-    border: 1px solid grey; /* Border with grey color */
+    border: 1px solid black; /* Border with grey color */
     border-radius: 9px;
     width: 40%; /* Limit the width of the input */
     font-size: 1rem; /* Font size for input text */
@@ -64,7 +68,7 @@
   margin-left: 90px;  /* Adds space to the left of the button */
     margin-bottom: 20px;
   background-color: transparent;  /* Transparent background */
-  border: 2px solid black;  /* Black border for the button */
+  border: 1px solid black;  /* Black border for the button */
   border-radius: 50px;  /* Rounded corners for a smoother button */
   width: 80px;  /* Slightly increased width for a more clickable button */
  /* Adds padding inside the button */
@@ -81,7 +85,7 @@
   background-color: black;  /* Change background to black on hover */
   color: white;  /* Text color changes to white */
   transform: scale(1.05);  /* Slightly increase button size on hover */ 
-  border-color: white;  /* Change border color to aqua on hover */
+  border-color: grey;  /* Change border color to aqua on hover */
 }
 
 /* Optional: Add focus styles for better accessibility */
