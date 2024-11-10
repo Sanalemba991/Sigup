@@ -8,7 +8,7 @@
   }
 
   .login{
-    color: aqua;
+    color: black;
     text-align: center;
   }
 /* Styling for the form container */
@@ -34,7 +34,7 @@
     border-radius: 9px;
     width: 40%; /* Limit the width of the input */
     font-size: 1rem; /* Font size for input text */
-    color: wheat; /* Color for the text entered in the input */
+    color:white; /* Color for the text entered in the input */
     box-sizing: border-box; /* Include padding and border in width calculation */
     padding-left:10px; /* Adds space to the left of both input text and placeholder */
     transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transition on focus */
@@ -42,7 +42,7 @@
   
   /* Styling for the placeholder text */
   .cen input::placeholder {
-    color: white; /* Light grey color for placeholder text */
+    color: rgb(129, 127, 134); /* Light grey color for placeholder text */
     font-size: small; /* Same font size as input text */
  /* Make placeholder text italic */
   }
@@ -59,27 +59,42 @@
   
 
     
-  .btn{
-    width: 4em;
-    border-color: black;
-    background-color: transparent;
-  border-radius:10%;
-    margin-top: 14px;
-    cursor: pointer;
-   /* Uppercase text for button */
-    transition: all 0.3s ease;  /* Smooth transitions for background and scale */
-    box-shadow:black;  /* Subtle shadow for depth */
-  }
-  .btn:hover {
-    background: gray;  /* Reverse gradient on hover */
-    transform: translateY(-2px);  /* Slight upward movement for a hover effect */
-    box-shadow: 0 6px 12px rgba(174, 237, 243, 0.4);  /* Enhance shadow on hover */
-  }
+.btn {
+    margin-top: 40px;
+  margin-left: 90px;  /* Adds space to the left of the button */
+    margin-bottom: 20px;
+  background-color: transparent;  /* Transparent background */
+  border: 2px solid black;  /* Black border for the button */
+  border-radius: 50px;  /* Rounded corners for a smoother button */
+  width: 80px;  /* Slightly increased width for a more clickable button */
+ /* Adds padding inside the button */
+ /* Standard font size */
+  color: black;  /* Button text color */
+  cursor: pointer;  /* Change cursor to pointer for interactivity */
+  transition: all 0.3s ease;  /* Smooth transition for background, border, and scale */
+  
+  /* Ensure button behaves as inline-block */
+}
+
+/* Styling when the button is hovered */
+.btn:hover {
+  background-color: black;  /* Change background to black on hover */
+  color: white;  /* Text color changes to white */
+  transform: scale(1.05);  /* Slightly increase button size on hover */ 
+  border-color: white;  /* Change border color to aqua on hover */
+}
+
+/* Optional: Add focus styles for better accessibility */
+.btn:focus {
+  outline: none;  /* Remove default focus outline */
+  box-shadow: 0 0 5px 2px rgba(0, 191, 255, 0.7);  /* Light focus shadow for better visibility */
+}
+
   /* Link Styling */
   a {
-    display: inline-block;
-    text-align: center;
-    color: #007bff;  /* Primary color for the link */
+ 
+  margin-left: 90px;
+    color: black;  /* Primary color for the link */
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;  /* Remove underline */
@@ -89,7 +104,7 @@
   
   /* Hover effect */
   a:hover {
-    color: #0056b3;  /* Darker blue color on hover */
+    color: white;  /* Darker blue color on hover */
     text-decoration: underline;  /* Underline when hovered */
     transform: translateY(-2px);  /* Slight upward movement on hover */
   }
@@ -97,7 +112,7 @@
   /* Focus effect (for accessibility) */
   a:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.6);  /* Soft glowing outline for accessibility */
+    box-shadow: white;  /* Soft glowing outline for accessibility */
   }
   .la{
     margin-left: 12px;
