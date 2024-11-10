@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Make sure axios is imported
 import { Link } from "react-router-dom"; // Import Link for navigation
+import  './Login.css'
 
 function LogIn() {
   const [email, setEmail] = useState("");

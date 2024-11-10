@@ -1,0 +1,84 @@
+
+
+.Log {
+    background-image: url('Images.png'); /* Reference image in public/images */
+    background-size: cover;
+    background-position: center;
+  
+    min-height: 100vh;
+  }
+  
+    
+  
+  .login{
+  
+    margin-top: 13%;
+    text-align: center;
+  }
+  .cen{
+    margin-top:30px ;
+    text-align: center;
+  }
+  .btn{
+    width: 4em;
+    border-color: black;
+    background-color: transparent;
+  border-radius:10%;
+    margin-top: 14px;
+    cursor: pointer;
+   /* Uppercase text for button */
+    transition: all 0.3s ease;  /* Smooth transitions for background and scale */
+    box-shadow:black;  /* Subtle shadow for depth */
+  }
+  .btn:hover {
+    background: gray;  /* Reverse gradient on hover */
+    transform: translateY(-2px);  /* Slight upward movement for a hover effect */
+    box-shadow: 0 6px 12px rgba(174, 237, 243, 0.4);  /* Enhance shadow on hover */
+  }
+  /* Link Styling */
+  a {
+    display: inline-block;
+    text-align: center;
+    color: #007bff;  /* Primary color for the link */
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;  /* Remove underline */
+    transition: color 0.3s ease, transform 0.2s ease;  /* Smooth transition on hover */
+    margin-top: 20px;  /* Space between form and link */
+  }
+  
+  /* Hover effect */
+  a:hover {
+    color: #0056b3;  /* Darker blue color on hover */
+    text-decoration: underline;  /* Underline when hovered */
+    transform: translateY(-2px);  /* Slight upward movement on hover */
+  }
+  
+  /* Focus effect (for accessibility) */
+  a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(38, 143, 255, 0.6);  /* Soft glowing outline for accessibility */
+  }
+  .la{
+    margin-left: 12px;
+  }
+  .ctn{
+    width: 4em;
+    border-color: black;
+    background-color: transparent;
+  border-radius:10%;
+    margin-top: 14px;
+    margin-left: 50%;
+    cursor: pointer;
+   /* Uppercase text for button */
+    transition: all 0.3s ease;  /* Smooth transitions for background and scale */
+    box-shadow:black;
+  }
+  
+  .ctn:hover {
+    background: gray;  /* Reverse gradient on hover */
+    transform: translateY(-2px);  /* Slight upward movement for a hover effect */
+    box-shadow: 0 6px 12px rgba(174, 237, 243, 0.4);  /* Enhance shadow on hover */
+  }
+  /**********************************************************************************************************************/
+  
