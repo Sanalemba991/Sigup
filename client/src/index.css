@@ -1118,12 +1118,17 @@ footer .container .banner .right {
   text-align: center; /* Center the text */
   margin: 20px; /* Add some space around the logo */
 }
-.Log{
-  border-radius: 90px;
-border-color: #111;
-  border-color: #111;
-  background-color: transparent;
+
+.Log {
+  background-image: url('Images.png'); /* Reference image in public/images */
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100vh;
 }
+
+  
+
 .login{
 
   margin-top: 13%;
