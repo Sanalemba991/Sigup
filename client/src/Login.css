@@ -4,8 +4,60 @@
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+   
+  }
+
+  .login{
+    color: aqua;
+    text-align: center;
+  }
+/* Styling for the form container */
+.cen {
+    margin-top: 50px;
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    
+ 
+  }
+  .cen label strong {
+    /* Aqua color for the strong part */
+  }
+  .cen label{
+    background-color: transparent;
+  }
+ /* Styling for input fields inside .cen */
+ .cen input {
+    margin-top: 9px;
+    background-color: transparent; /* Make background transparent */
+    border: 1px solid grey; /* Border with grey color */
+    border-radius: 9px;
+    width: 40%; /* Limit the width of the input */
+    font-size: 1rem; /* Font size for input text */
+    color: wheat; /* Color for the text entered in the input */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding-left:10px; /* Adds space to the left of both input text and placeholder */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Smooth transition on focus */
   }
   
+  /* Styling for the placeholder text */
+  .cen input::placeholder {
+    color: white; /* Light grey color for placeholder text */
+    font-size: small; /* Same font size as input text */
+ /* Make placeholder text italic */
+  }
+  
+  
+  /* Styling for input fields on focus */
+  .cen input:focus {
+    border-color: black; /* Change border color to aqua on focus */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional: Add subtle background color on focus */
+    outline: none; /* Remove default outline for better design */
+  }
+  
+  
+  
+
     
   .btn{
     width: 4em;

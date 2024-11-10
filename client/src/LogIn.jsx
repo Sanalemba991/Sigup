@@ -34,20 +34,24 @@ function LogIn() {
   return (
     <div className="Log">
       <h2 className="login">Login</h2>
-      <div className="cen">
+      <div >
         <form onSubmit={submit}>
-          <div >
+          <div className="cen" >
+            <div>
             <label htmlFor="email">
-              <strong >Email</strong>
+              <strong  >Email</strong>
             </label>
+            </div>
+            <div>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="please submit your email"
               name="email"
               value={email}
               className="la"
               onChange={(e) => setEmail(e.target.value)}
             />
+            </div>
           </div>
           <div className="cen">
             <label htmlFor="password">
@@ -55,7 +59,7 @@ function LogIn() {
             </label>
             <input
               type="password"
-              placeholder="Password"
+              placeholder="please submit your password"
               name="password"
               value={password}
               className="la"
