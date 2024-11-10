@@ -33,7 +33,7 @@ function LogIn() {
 
   return (
     <div className="Log">
-      <h2 className="login">Login</h2>
+      <h2 className="logi">Login</h2>
       <div >
         <form onSubmit={submit}>
           <div className="cen" >

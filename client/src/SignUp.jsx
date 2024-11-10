@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Ensure axios is imported
-
+import  './Login.css'
 function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState('');
@@ -33,8 +33,8 @@ function SignUp() {
     };
 
     return (
-        <div>
-            <h2 className="login">Register</h2>
+        <div className="Log">
+            <h2 className="logi">Register</h2>
             <form onSubmit={handleSubmit}>
                 <div className="cen">
                     <label htmlFor="name">
@@ -76,7 +76,7 @@ function SignUp() {
                     />
                 </div>
 
-                <button className="ctn" type="submit">Register</button>
+                <button className="btn" type="submit">Register</button>
             </form>
    
         </div>
