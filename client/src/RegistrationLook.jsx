@@ -3,7 +3,7 @@ import React from 'react'
 function RegistrationLook() {
   return (
     <div>
-      Registration for Looked
+      Registration for Looked as
     </div>
   )
 }
