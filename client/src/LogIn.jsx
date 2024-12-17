@@ -39,7 +39,7 @@ function LogIn() {
           <div className="cen" >
             <div>
             <label htmlFor="email">
-              <strong  >Email</strong>
+              <strong  >Email.</strong>
             </label>
             </div>
             <div>
